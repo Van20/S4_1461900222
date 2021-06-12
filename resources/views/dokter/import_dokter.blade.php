@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href=" {{ asset('css/sb-admin-2.min.css') }} " rel="stylesheet">
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -281,26 +281,46 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container">
-                    @foreach($pasien as $p)
-                        <form action="/pasien/update" method="post">
-                        {{ csrf_field() }}
+                <div class="container-fluid">
 
-                        <input type="hidden" name="id" value="{{ $p->id }}"> 
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Nama Pasien</label>
-                            <input type="text" class="form-control" required="required" name="nama" value="{{ $p->nama }}">
+                    <!-- Page Heading -->
+                    <h1 class="h3 mb-2 text-gray-800">TAMBAHKAN DATA DOKTER MELALUI FILE EXCEL</h1>
+                    <p class="mb-4"></p>
+
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Upload File</h6>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1">Alamat</label>
-                            <input type="text" class="form-control" required="required" name="alamat" value="{{ $p->alamat }}">
+                        
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                              @if($message = Session::get('success'))
+                                                  <script>
+                                                  alert('Berhasil import Data!');
+                                                  </script>
+                                                  @endif
+
+                                                  <form class="" method="post" enctype="multipart/form-data" action="/import">
+                                                    {{ csrf_field() }}
+                                                      <input id="input-b3" name="file" type="file" class="file" multiple>
+                                                      <br><br><button type="submit" name="simpan" class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">Unggah File</button>
+                                                  </form>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                        <div><br></div>
-                        <div>
-                            <button type="submit" class="btn btn-primary">Simpan Data</button>
-                        </div>
-                        </form>
-                    @endforeach
+                    </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -357,6 +377,13 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
 
 </body>
 

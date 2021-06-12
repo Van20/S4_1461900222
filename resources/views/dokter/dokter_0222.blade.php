@@ -293,10 +293,25 @@
                             <h6 class="m-0 font-weight-bold text-primary">List Dokter</h6>
                         </div>
                         <div class="card-body">
-                            <a class="collapse-item" href="{{'/createDokter'}}">
-                                <button type="button" class="btn btn-outline-primary">Tambah Dokter +</button> 
-                            </a>
+                        <table>
+                            <tr>
+                                <td class="align-baseline">
+                                    <a class="collapse-item" href="{{'/createDokter'}}">
+                                        <button type="button" class="btn btn-outline-primary">Tambah Dokter +</button> 
+                                    </a>
+                                </td>
+                                <td class="w-10   p-1"></td>
+                                <td>    
+                                    <a class="collapse-item" href="{{'/dokterimport'}}">
+                                        <button type="button" class="btn btn-outline-primary">
+                                        <i class="fas fa-book"></i> Upload Excel</button> 
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
                         </div>
+
+                        
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">

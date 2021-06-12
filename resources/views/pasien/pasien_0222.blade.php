@@ -293,9 +293,22 @@
                             <h6 class="m-0 font-weight-bold text-primary">List Pasien</h6>
                         </div>
                         <div class="card-body">
-                            <a class="collapse-item" href="{{'/createPasien'}}">
-                                <button type="button" class="btn btn-outline-primary">Tambah Pasien +</button> 
-                            </a>
+                            <table>
+                                <tr>
+                                    <td class="align-baseline">
+                                        <a class="collapse-item" href="{{'/createPasien'}}">
+                                            <button type="button" class="btn btn-outline-primary">Tambah Pasien +</button> 
+                                        </a>
+                                    </td>
+                                    <td class="w-10   p-1"></td>
+                                    <td>    
+                                        <a class="collapse-item" href="{{'/pasienimport'}}">
+                                            <button type="button" class="btn btn-outline-primary">
+                                            <i class="fas fa-book"></i> Upload Excel</button> 
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

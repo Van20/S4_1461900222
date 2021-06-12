@@ -36,4 +36,12 @@ Route::get('/editPasien/{id}', [PasienController::class, 'edit']);;
 Route::get('/pasien/hapus/{id}', [PasienController::class, 'destroy']);
 Route::get('/createPasien', [PasienController::class, 'create_pasien'])->name('create');
 
+//IMPORT DOKTER
+Route::post('/import', [DokterController::class, 'import'])->name('import');
+Route::get('/dokterimport', [DokterController::class, 'dokterimport'])->name('dokterimport');
+
+//IMPORT PASIEN
+Route::post('/import', [PasienController::class, 'import'])->name('import');
+Route::get('/pasienimport', [PasienController::class, 'pasienimport'])->name('pasienimport');
+
 
